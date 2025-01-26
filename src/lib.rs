@@ -22,7 +22,7 @@ pub fn process_files(files: Vec<&str>, env_vars: &HashMap<String, String>) -> io
 			match env_vars.get(&var_name.to_uppercase()) {
 				Some(val) => val.to_string(),
 				None => {
-					warn!("Variable '{{{}}}' not found in environment variables", var_name);
+					warn!("Variable '{}' not found in environment variables", var_name);
 					caps[0].to_string() // Return the original placeholder if not found
 				}
 			}
