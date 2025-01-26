@@ -1,5 +1,7 @@
 # Config Injector
 
+DISCLAIMER: I am not a good rust dev, if you see some stuff that could be done better you can create a pull request.
+
 The `config-injector` is a Rust-based tool that processes configuration files, replacing placeholders with environment
 variable values. It reads files, searches for placeholders in the format `{{VAR_NAME}}`, and replaces them with the
 respective values of environment variables. If a variable is not found, it logs a warning and leaves the placeholder
