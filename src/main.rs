@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use config_injector::process_files;
 
 fn main() -> std::io::Result<()> {
+    env::set_var("RUST_LOG", "info");
     env_logger::init();
     
     let env_vars: HashMap<String, String> = env::vars().collect();
