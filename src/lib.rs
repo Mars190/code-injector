@@ -1,4 +1,4 @@
-use std::fs::{self, File};
+use std::fs::{File};
 use std::io::{self, Read, Write};
 use std::collections::HashMap;
 use regex::Regex;
@@ -13,7 +13,6 @@ pub fn process_files(files: Vec<&str>, env_vars: &HashMap<String, String>) -> io
 	for file in files {
 		info!("Processing file: {}", file);
 		
-		// Read the file content
 		let mut content = String::new();
 		File::open(file)?.read_to_string(&mut content)?;
 		
@@ -30,11 +29,11 @@ pub fn process_files(files: Vec<&str>, env_vars: &HashMap<String, String>) -> io
 		});
 		
 		// Write the updated content back to the file
-		let path = Path::new(file);  // Convert to Path for easier display
+		let path = Path::new(file);
 		let mut file = File::create(path)?;
 		file.write_all(updated_content.as_bytes())?;
 		
-		info!("Updated file: {}", path.display());  // Use display() here
+		info!("Updated file: {}", path.display());
 	}
 	
 	Ok(())

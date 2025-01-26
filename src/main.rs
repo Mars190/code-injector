@@ -1,6 +1,6 @@
 use std::env;
 use std::collections::HashMap;
-use config_injector::process_files;  // Import the process_files function from lib.rs
+use config_injector::process_files;
 
 fn main() -> std::io::Result<()> {
     env_logger::init();
