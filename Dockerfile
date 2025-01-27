@@ -13,9 +13,3 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /usr/src/config-injector
 
 COPY . .
-
-RUN rustup target add x86_64-unknown-linux-gnu
-RUN cargo build --release --target x86_64-unknown-linux-gnu
-
-# The binary will be located at
-# /usr/src/config-injector/target/x86_64-unknown-linux-gnu/release/config-injector
