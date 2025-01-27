@@ -1,12 +1,7 @@
-# Run like this
-# docker run --rm -v $(pwd):/usr/src/config-injector -v $(pwd)/output:/usr/src/config-injector/target/x86_64-unknown-linux-gnu/release rust-cross-compilation
-
-FROM rust:latest
+FROM rust:slim
 
 RUN apt-get update && apt-get install -y \
     build-essential \
-    curl \
-    libssl-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
